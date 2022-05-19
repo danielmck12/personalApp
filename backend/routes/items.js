@@ -8,7 +8,7 @@ const Item = require('../models/itemModel');
 router.get('/', async (req, res) => {
   const items = await Item.find({})
 
-  res.status(200).json({"allItems" : items});
+  res.status(200).json(items);
 });
 
 //Get a specific item
