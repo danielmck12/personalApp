@@ -1,0 +1,71 @@
+body {
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+  border: 10px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  width:40vw;
+  margin: 10em auto;
+  background-color: ghostwhite;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.addItem {
+  /*border: 5px solid rgb(0, 0, 0);*/
+  width: 100%;
+  padding: 1em;
+}
+
+.itemList {
+  /*border: 5px solid rgb(50, 27, 100);*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100%;
+  padding:4em;
+}
+
+.itemList ul {
+  padding:0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .App {
+    width:90vw;
+    margin:1em auto;
+  }
+
+  .itemList {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .App {
+      width: 90vw;
+      margin: 1em auto;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1199px) {
+  .App {
+      width: 80vw;
+      margin: 1em auto;
+    }
+}
+
+@media only screen and (min-width: 1200px) and (max-width:2100px) {
+  .App {
+    width:80vw;
+    margin: 1em auto;
+  }
+}
+
