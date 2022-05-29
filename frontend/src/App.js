@@ -1,7 +1,13 @@
 import './App.css';
-import ItemComponent from './components/ItemComponent';
-import AddItemComponent from './components/AddItemComponent';
-import { useEffect, useState } from 'react';
+
+import AddItemComponent from './components/AddItems/AddItemComponent';
+
+import CompletedItems from './components/Lists/CompletedItems/CompletedItems';
+import InProgressItems from './components/Lists/InProgressItems/InProgressItem';
+import UnCompletedItems from './components/Lists/UnCompletedItems/UnCompletedItems';
+
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function App() {
   /*const listItems = [
@@ -41,39 +47,53 @@ function App() {
       completed: false
     }
   ]*/
-
+  
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setLoading(true);
-    fetch("http://localhost:3000/items")
-      .then((res) => res.json())
-      .then((data) => setItems(data))
-      .catch((err) => console.log(err))
-      .finally(() => setLoading(false));
-  }, [])
-
-  if(loading) {
-    return <p>Items are loading...</p>
+  const getList = async () => { 
+    try {
+      const { data } = await axios.get('http://localhost:3000/items')
+      console.log(data)
+      setItems(data);
+      setLoading(false);
+      return;
+    } catch (e) {
+      return console.log(e);
+    }
   }
 
-  return (
-    <div className="App">
+  useEffect(() => {
+    console.log('here')
+    getList()
 
-      <div className='itemList'>
-        <ul>
-          {
-            items.map((e) => {
-              return <ItemComponent key={e._id} item={e} />
-            })
-          }
-        </ul>
+    
+  }, [loading])
+  
+  /*if(loading) {
+    return <LoadingScreen />
+  }*/
+
+  return (
+    <div className="outerApp">
+      <div className="App">
+        <div className='itemList unCompleted'>
+          <UnCompletedItems items={items} setLoading={setLoading} loading={loading} />
+        </div>
+        <div className="itemList inProgress">
+          <InProgressItems items={items} setLoading={setLoading} loading={loading}/>
+        </div>
+        <div className="itemList completed">
+          <CompletedItems items={items} setLoading={setLoading} loading={loading}/>
+        </div>
+        
       </div>
       <div className='addItem'>
-        <AddItemComponent />      
+        <AddItemComponent setLoading={() => setLoading(true)} />
       </div>
     </div>
+    
+    
   );
 }
 

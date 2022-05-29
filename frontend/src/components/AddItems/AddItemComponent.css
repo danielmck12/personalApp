@@ -1,0 +1,47 @@
+.newItemButtonHolder {
+   display: flex;
+   justify-content: center;
+}
+
+.newItemButtonHolder button {
+   width:100%;
+}
+
+.form-div {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin:0;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-align: center;
+}
+
+label {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   text-align: left;
+   margin-bottom: 0.5em;
+   width:50%;
+
+   
+}
+
+.w50 {
+   width:50%;
+}
+
+
+.m25 {
+   margin:0.25em 0;
+}
+
+@media only screen and (max-width: 767px) {
+   label {
+     width:80%;
+   }
+   .w50 {
+      width:80%;
+   }
+}

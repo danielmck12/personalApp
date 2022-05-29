@@ -3,24 +3,34 @@ body {
   margin:0;
   box-sizing: border-box;
 }
-
-.App {
-  text-align: center;
-  border: 10px solid rgb(255, 255, 255);
-  border-radius: 20px;
-  width:40vw;
-  margin: 10em auto;
-  background-color: ghostwhite;
-
+.outerApp {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.App {
+  text-align: center;
+  border: 10px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  width:70vw;
+  margin: 2.5em auto;
+  background-color: ghostwhite;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.App .itemList h2 strong {
+  text-decoration: underline;
+}
+
 .addItem {
-  /*border: 5px solid rgb(0, 0, 0);*/
-  width: 100%;
-  padding: 1em;
+  border: 5px solid rgb(0, 0, 0);
+  width: 40%;
+  padding: 0.5em;
+  margin-bottom: 2em;
 }
 
 .itemList {
@@ -29,7 +39,7 @@ body {
   flex-direction: column;
   justify-content: center;
   width:100%;
-  padding:4em;
+  padding:2em 2em 0 2em;
 }
 
 .itemList ul {
@@ -41,31 +51,51 @@ body {
   .App {
     width:90vw;
     margin:1em auto;
+    flex-direction: column;
   }
 
   .itemList {
     padding: 0;
   }
+
+  .addItem {
+    width:100%;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .App {
-      width: 90vw;
-      margin: 1em auto;
-    }
+    width: 90vw;
+    margin: 1em auto;
+    flex-direction: column;
+  }
+
+  .addItem {
+    width: 90%;
+  }
 }
 
-@media only screen and (min-width: 992px) and (max-width:1199px) {
+@media only screen and (min-width: 992px) and (max-width:1299px) {
   .App {
       width: 80vw;
       margin: 1em auto;
+      flex-direction: column;
     }
+
+  .addItem {
+    width: 80%;
+  }
 }
 
-@media only screen and (min-width: 1200px) and (max-width:2100px) {
+@media only screen and (min-width: 1300px) and (max-width:2100px) {
   .App {
-    width:80vw;
+    width:95%;
     margin: 1em auto;
+  }
+
+  .itemList {
+    padding:0;
+    width:50%;
   }
 }
 
