@@ -16,6 +16,12 @@
    text-align: center;
 }
 
+   .form-div input, textarea {
+      background-color: #64B6AC;
+      border: 3px solid #714955;
+      border-radius: 5px;
+   }
+
 label {
    display: flex;
    flex-direction: column;

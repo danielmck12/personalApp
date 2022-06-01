@@ -2,11 +2,8 @@ import './App.css';
 
 import AddItemComponent from './components/AddItems/AddItemComponent';
 
-import CompletedItems from './components/Lists/CompletedItems/CompletedItems';
-import InProgressItems from './components/Lists/InProgressItems/InProgressItem';
-import UnCompletedItems from './components/Lists/UnCompletedItems/UnCompletedItems';
+import ItemList from './components/Lists/ItemList';
 
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 
 function App() {
@@ -48,26 +45,10 @@ function App() {
     }
   ]*/
   
-  const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const getList = async () => { 
-    try {
-      const { data } = await axios.get('http://localhost:3000/items')
-      console.log(data)
-      setItems(data);
-      setLoading(false);
-      return;
-    } catch (e) {
-      return console.log(e);
-    }
-  }
-
   useEffect(() => {
-    console.log('here')
-    getList()
-
-    
+    setLoading(false)
   }, [loading])
   
   /*if(loading) {
@@ -78,13 +59,13 @@ function App() {
     <div className="outerApp">
       <div className="App">
         <div className='itemList unCompleted'>
-          <UnCompletedItems items={items} setLoading={setLoading} loading={loading} />
+          <ItemList progress={1} setLoading={setLoading} loading={loading} />
         </div>
         <div className="itemList inProgress">
-          <InProgressItems items={items} setLoading={setLoading} loading={loading}/>
+          <ItemList progress={2} setLoading={setLoading} loading={loading}/>
         </div>
         <div className="itemList completed">
-          <CompletedItems items={items} setLoading={setLoading} loading={loading}/>
+          <ItemList progress={3} setLoading={setLoading} loading={loading}/>
         </div>
         
       </div>

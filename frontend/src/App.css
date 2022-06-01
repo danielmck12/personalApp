@@ -27,7 +27,7 @@ body {
 }
 
 .addItem {
-  border: 5px solid rgb(0, 0, 0);
+  /*border: 5px solid rgb(0, 0, 0);*/
   width: 40%;
   padding: 0.5em;
   margin-bottom: 2em;

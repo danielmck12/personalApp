@@ -29,7 +29,7 @@ router.post('/', async (req, res) => {
       title: req.body.title,
       subject: req.body.subject,
       comment: req.body.comment,
-      completed: false
+      progress: 1
     })
 
     const savedItem = await newItem.save();
@@ -56,13 +56,13 @@ router.delete('/:id', (req, res) => {
 //Edit an item
 router.put('/:id', async (req, res) => {
   const { id } = req.params;
-  const { title, subject, comment, completed} = req.body;
+  const { title, subject, comment, progress} = req.body;
 
   const updatedItem = {
     "title": title,
     "subject" : subject,
     "comment" : comment,
-    "completed" : completed
+    "progress" : progress
   }
 
   const itemBeforeUpdate = await Item.findById(id)

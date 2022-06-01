@@ -4,6 +4,9 @@
    margin:1em;
    display:flex;
    flex-direction: row;
+
+   box-shadow: -5px 5px 10px #64B6AC,
+               5px -5px 10px #64B6AC;
 }
 
    .details {
@@ -11,7 +14,25 @@
       flex-direction: column;
       justify-content: center;
       flex-grow: 5;
+      margin:1em;
+      
+      white-space: pre-wrap;
    }
+      .details #comment {
+         text-align: left;
+         border-top: 1px solid black;
+         padding-top:10px;
+      }
+
+      .details label {
+         width:100%;
+      }
+
+      .details #titleInput, #subjectInput, #commentInput {
+         background-color: inherit;
+         border:3px solid #714955;
+         border-radius: 5px;
+      }
 
    .itemButtons {
       /*border: 3px solid black;*/

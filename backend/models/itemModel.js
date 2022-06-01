@@ -7,7 +7,7 @@ const itemSchema = new Schema({
    title: String,
    subject: String,
    comment: String,
-   completed: Boolean
+   progress: {type: Number, min:1, max:3}
 });
 
 //List item model

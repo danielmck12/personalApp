@@ -44,18 +44,18 @@ function AddItemComponent(props) {
    //If user clicks add item; display form
    if(clicked) {
       return (
-         <div className='form-div'>          
-               <legend>Add a new item</legend>
-               <label htmlFor="title">
-                  Title :<input onChange={handleChange} type="text" maxLength="30" name="title" id="title" value={title} required></input>
-               </label>
-               <label htmlFor="subject">
-               Subject :<input onChange={handleChange} type="text" name="subject" id="subject" value={subject}></input>
-               </label>
-               <label htmlFor="comment">
-               <textarea onChange={handleChange} name="comment" id="comment" value={comment}></textarea>
-               </label>
-               <input type="submit" onClick={handleSubmit} value="Add Item" className='btn btn-success btn-block w50 m25'></input>
+         <div className='form-div'>      
+            <legend>Add a new item</legend>
+            <label htmlFor="title">
+               Title :<input onChange={handleChange} type="text" maxLength="30" name="title" id="title" value={title} required></input>
+            </label>
+            <label htmlFor="subject">
+            Subject :<input onChange={handleChange} type="text" name="subject" id="subject" value={subject}></input>
+            </label>
+            <label htmlFor="comment">
+            <textarea onChange={handleChange} name="comment" id="comment" value={comment}></textarea>
+            </label>
+            <button className='btn btn-success btn-block w50 m25' onClick={handleSubmit} value="Add Item">Add Item</button>
             <button className="btn btn-danger w50 m25" onClick={handleClick} >Cancel</button>
          </div>
       )
