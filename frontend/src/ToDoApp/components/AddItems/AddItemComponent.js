@@ -31,7 +31,7 @@ function AddItemComponent(props) {
          subject:subject,
          comment:comment
        }
-      axios.post("http://localhost:3000/items", newItem)
+      axios.post("http://localhost:3001/items", newItem)
       .then(response => console.log(response.data))
          .then(() => {
             setTitle('')

@@ -12,7 +12,7 @@ function GetItems() {
    useEffect(() => {
       setLoading(true);
       
-      axios.get('http://localhost:3000/items')
+      axios.get('http://localhost:3001/items')
          .then((data) => {
             setItems(data.data)
             console.log(...items);

@@ -1,80 +1,33 @@
-import './App.css';
+import ToDoApp from "./ToDoApp/ToDoApp.js";
+import SubjectsApp from './SubjectsApp/SubjectsApp.js';
+import HomeApp from "./HomeApp/HomeApp.js";
+import Navbar from "./Navbar/Navbar.js";
+import PageNotFound from "./PageNotFound/PageNotFound.js";
+import NewTool from './HomeApp/components/ToolsSection/NewTool/NewTool.js';
 
-import AddItemComponent from './components/AddItems/AddItemComponent';
-
-import ItemList from './components/Lists/ItemList';
-
-import { useState, useEffect } from 'react';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
 
 function App() {
-  /*const listItems = [
-    { 
-      title: 'item1', 
-      id: 1,
-      subject: 'maths',
-      comment: 'Hello this is a generic comment about this item',
-      completed: false
-    }, 
-    { 
-      title: 'item2', 
-      id: 2,
-      subject: 'chemistry',
-      comment: 'Hello this is a generic comment about this item',
-      completed: false
-    }, 
-    { 
-      title: 'item3', 
-      id: 3,
-      subject: 'physics',
-      comment: 'Hello this is a generic comment about this item',
-      completed: false
-    }, 
-    { 
-      title: 'item4', 
-      id: 4,
-      subject: 'art and design',
-      comment: 'Hello this is a generic comment about this item',
-      completed: false 
-    },
-    {
-      title: 'item5',
-      id: 5,
-      subject: 'CDT',
-      comment: 'Hello this is a generic comment about this item',
-      completed: false
-    }
-  ]*/
-  
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(false)
-  }, [loading])
-  
-  /*if(loading) {
-    return <LoadingScreen />
-  }*/
 
   return (
-    <div className="outerApp">
-      <div className="App">
-        <div className='itemList unCompleted'>
-          <ItemList progress={1} setLoading={setLoading} loading={loading} />
-        </div>
-        <div className="itemList inProgress">
-          <ItemList progress={2} setLoading={setLoading} loading={loading}/>
-        </div>
-        <div className="itemList completed">
-          <ItemList progress={3} setLoading={setLoading} loading={loading}/>
-        </div>
-        
-      </div>
-      <div className='addItem'>
-        <AddItemComponent setLoading={() => setLoading(true)} />
-      </div>
+    <div>
+      <Router>
+        <Navbar />
+        <Routes>
+          {//<Route path='*' element={<PageNotFound />}></Route>}
+          }
+          <Route path='/' element={<HomeApp />}></Route>
+          <Route path='/NewTool' element={<NewTool />}></Route>
+          <Route path='/toDoApp' element={<ToDoApp />}></Route>
+          <Route path='/subjects' element={<SubjectsApp />}></Route>
+        </Routes>
+      </Router>
     </div>
-    
-    
   );
 }
 

@@ -1,0 +1,14 @@
+.tool-item {
+   margin: 0;
+   padding: 1em 0;
+   display: flex;
+}
+
+.tool-details {
+   padding: 1em;
+}
+
+img {
+   width:300px;
+   height:300px;
+}

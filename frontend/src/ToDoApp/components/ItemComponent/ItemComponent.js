@@ -2,7 +2,7 @@ import axios from 'axios';
 import { marked } from 'marked';
 import { useState } from 'react';
 
-import { moveStage } from '../helperFunctions/moveStage';
+import { moveStage } from '../../helperFunctions/moveStage.js';
 import './ItemComponent.css'
 
 function ItemComponent(props) {
@@ -12,20 +12,29 @@ function ItemComponent(props) {
    const [subject, setSubject] = useState(props.item.subject);
    const [comment, setComment] = useState(props.item.comment);
 
-   let markedComment = marked.parse(props.item.comment, {gfm:true})
+   let markedComment
+   //This condition ensures marked does not
+   //attempt to parse undefined
+   if(props.item.comment) {
+      markedComment = marked.parse(props.item.comment, { gfm: true })
+   } else {
+      markedComment = props.item.comment;
+   }
+   
+   //let markedComment = props.item.comment;
 
    const handleClick = ({ target }) => {
       //Handle item is deleted
       if(target.id === "delete") {
          props.setLoading()
-         axios.delete(`http://localhost:3000/items/${props.item._id}`)
+         axios.delete(`http://localhost:3001/items/${props.item._id}`)
       //Handle item is edited
       } else if(target.id === "edit") {
          props.setLoading()
          //Set is editing to render/un-render inputs
          setIsEditing(prevState => !prevState);
          if(isEditing) {
-            axios.put(`http://localhost:3000/items/${props.item._id}`, {title:title, subject:subject, comment:comment})
+            axios.put(`http://localhost:3001/items/${props.item._id}`, {title:title, subject:subject, comment:comment})
          }
       //Handle cancel edit
       } else if(target.id === "cancel") {

@@ -1,0 +1,10 @@
+.site-hero {
+   /*border: 3px solid pink;*/
+   padding: 1em;
+   min-width: 60%;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   flex-grow: 10;
+}
