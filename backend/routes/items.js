@@ -34,6 +34,11 @@ router.post('/', async (req, res) => {
 
     const savedItem = await newItem.save();
 
+    console.log(`
+|-------------------------|
+SAVED ITEM : ${savedItem}
+|-------------------------|
+`)
     res.status(201).json({savedItem})
 
   } catch(e) {

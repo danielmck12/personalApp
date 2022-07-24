@@ -19,12 +19,11 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          {//<Route path='*' element={<PageNotFound />}></Route>}
-          }
-          <Route path='/' element={<HomeApp />}></Route>
-          <Route path='/NewTool' element={<NewTool />}></Route>
-          <Route path='/toDoApp' element={<ToDoApp />}></Route>
-          <Route path='/subjects' element={<SubjectsApp />}></Route>
+          <Route path='*' element={<PageNotFound title="Page Not Found!" />}></Route>
+          <Route path='/' element={<HomeApp title="Home Page" />}></Route>
+          <Route path='/NewTool' element={<NewTool title="Add a New Tool" />}></Route>
+          <Route path='/toDoApp' element={<ToDoApp title="ToDo app" />}></Route>
+          <Route path='/subjects' element={<SubjectsApp title="Subjects" />}></Route>
         </Routes>
       </Router>
     </div>

@@ -1,0 +1,20 @@
+const mockListOfTools = [
+      {
+         name:"toDoApp",
+         description:"A tool for organising todo items and tracking the progress made on each item",
+         image:todoImage,
+         id:1
+      },
+      {
+         name:"polynomial calculator",
+         description:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nesciunt excepturi aut vero adipisci, o",
+         image:todoImage,
+         id:2
+      },
+      {
+         name:"future tool",
+         description:"bcaecati possimus nemo eos ad, sequi, rem at iusto commodi culpa minima nobis in est nihil.",
+         image:todoImage,
+         id:3
+      }
+   ]

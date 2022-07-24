@@ -1,52 +1,18 @@
-import './ToDoApp.css';
+import styles from './ToDoApp.module.css';
 
 import AddItemComponent from './components/AddItems/AddItemComponent'
 import ItemList from './components/Lists/ItemList';
 
 import { useState, useEffect } from 'react';
 
-function ToDoApp() {
-   /*const listItems = [
-     { 
-       title: 'item1', 
-       id: 1,
-       subject: 'maths',
-       comment: 'Hello this is a generic comment about this item',
-       completed: false
-     }, 
-     { 
-       title: 'item2', 
-       id: 2,
-       subject: 'chemistry',
-       comment: 'Hello this is a generic comment about this item',
-       completed: false
-     }, 
-     { 
-       title: 'item3', 
-       id: 3,
-       subject: 'physics',
-       comment: 'Hello this is a generic comment about this item',
-       completed: false
-     }, 
-     { 
-       title: 'item4', 
-       id: 4,
-       subject: 'art and design',
-       comment: 'Hello this is a generic comment about this item',
-       completed: false 
-     },
-     {
-       title: 'item5',
-       id: 5,
-       subject: 'CDT',
-       comment: 'Hello this is a generic comment about this item',
-       completed: false
-     }
-   ]*/
+function ToDoApp(props) {
+
+   document.title = 'COMA | ' + props.title;
 
    const [loading, setLoading] = useState(false);
 
    useEffect(() => {
+      
       setLoading(false)
    }, [loading])
 
@@ -55,20 +21,20 @@ function ToDoApp() {
    }*/
 
    return (
-      <div className="outerApp">
-         <div className="App">
-            <div className='itemList unCompleted'>
+      <div className={styles.outerApp}>
+         <div className={styles.App}>
+            <div className={`${styles.itemList} ${styles.unCompleted}`}>
                <ItemList progress={1} setLoading={setLoading} loading={loading} />
             </div>
-            <div className="itemList inProgress">
+            <div className={`${styles.itemList} ${styles.inProgress}`}>
                <ItemList progress={2} setLoading={setLoading} loading={loading} />
             </div>
-            <div className="itemList completed">
+            <div className={`${styles.itemList} ${styles.completed}`}>
                <ItemList progress={3} setLoading={setLoading} loading={loading} />
             </div>
 
          </div>
-         <div className='addItem'>
+         <div className={styles.addItem}>
             <AddItemComponent setLoading={() => setLoading(true)} />
          </div>
       </div>

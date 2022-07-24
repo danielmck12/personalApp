@@ -1,3 +1,4 @@
+import styles from './SubjectsApp.module.css';
 
 function SubjectsApp() {
    return (

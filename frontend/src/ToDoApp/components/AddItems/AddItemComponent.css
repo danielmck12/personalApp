@@ -16,23 +16,23 @@
    text-align: center;
 }
 
-   .form-div input, textarea {
+   .form-div input, .form-div textarea {
       background-color: #64B6AC;
       border: 3px solid #714955;
       border-radius: 5px;
    }
 
-label {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
+   .form-div label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
 
-   text-align: left;
-   margin-bottom: 0.5em;
-   width:50%;
+      text-align: left;
+      margin-bottom: 0.5em;
+      width:50%;
 
-   
-}
+      
+   }
 
 .w50 {
    width:50%;

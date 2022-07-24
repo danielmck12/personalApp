@@ -1,10 +1,10 @@
-.tool-item {
+.toolItem {
    margin: 0;
    padding: 1em 0;
    display: flex;
 }
 
-.tool-details {
+.toolDetails {
    padding: 1em;
 }
 

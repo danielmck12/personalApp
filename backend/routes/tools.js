@@ -21,7 +21,10 @@ router.post('/', async (req, res) => {
 
       const savedTool = await newTool.save()
 
-      console.log('SAVED TOOL : ' + savedTool)
+      console.log(`
+|-------------------------|
+SAVED TOOL : ${savedTool}
+|-------------------------|`)
       res.status(201).json(newTool);
       
    } catch(e) {
