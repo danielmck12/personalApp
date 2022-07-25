@@ -4,6 +4,7 @@ import HomeApp from "./HomeApp/HomeApp.js";
 import Navbar from "./Navbar/Navbar.js";
 import PageNotFound from "./PageNotFound/PageNotFound.js";
 import NewTool from './HomeApp/components/ToolsSection/NewTool/NewTool.js';
+import SubjectPage from "./SubjectsApp/components/Subjects/SubjectPage.js";
 
 import React from "react";
 import {
@@ -17,13 +18,15 @@ function App() {
   return (
     <div>
       <Router>
-        <Navbar />
         <Routes>
-          <Route path='*' element={<PageNotFound title="Page Not Found!" />}></Route>
-          <Route path='/' element={<HomeApp title="Home Page" />}></Route>
-          <Route path='/NewTool' element={<NewTool title="Add a New Tool" />}></Route>
-          <Route path='/toDoApp' element={<ToDoApp title="ToDo app" />}></Route>
-          <Route path='/subjects' element={<SubjectsApp title="Subjects" />}></Route>
+          <Route path="/" element={<Navbar />}>
+            <Route index element={<HomeApp title="Home Page" />} />
+            <Route path='NewTool' element={<NewTool title="Add a New Tool" />}></Route>
+            <Route path='toDoApp' element={<ToDoApp title="ToDo app" />}></Route>
+            <Route path='subjects' element={<SubjectsApp title="Subjects" />} ></Route>
+            <Route path='subjects/:subject' element={<SubjectPage />}></Route>
+            <Route path='*' element={<PageNotFound title="Page Not Found!" />} />
+          </Route>
         </Routes>
       </Router>
     </div>
