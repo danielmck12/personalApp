@@ -14,7 +14,11 @@ function ItemList(props) {
 
    if (items.length < 1) {
       return (
+         <div>
+         <h2><strong>{heading}</strong></h2>
          <h1>{emptyListMessage}</h1>
+      </div>
+         
       )
    }
 

@@ -7,9 +7,9 @@ function AddItemComponent(props) {
    const [clicked, setClicked] = useState(false);
    
    //Form state
-   const [title, setTitle] = useState();
-   const [subject, setSubject] = useState();
-   const [comment, setComment] = useState();
+   const [title, setTitle] = useState('');
+   const [subject, setSubject] = useState('');
+   const [comment, setComment] = useState('');
 
    const handleClick = (e) => {
       e.preventDefault();

@@ -1,0 +1,19 @@
+.overviewSection {
+   width:100%;
+   display: flex;
+   justify-content: flex-start;
+   padding: 1em 1.5em;
+   background-color: #212529;
+   color:rgba(255,255,255,0.55);
+}
+
+.overviewSection img {
+   min-width:40%;
+   height:auto;
+   margin-right:1em;
+   border-radius: 10px;
+}
+
+.fullTab {
+   min-height:100vh;
+}

@@ -4,7 +4,7 @@
    /*color:rgba(255,255,255,.55);*/
    padding:2em;
    margin:1em 0;
-   max-height:500px;
+   
 
    display: grid;
    grid-template-columns: repeat(3, 1fr);
@@ -14,6 +14,7 @@
 .imageCard {
    background-color: rgba(255,255,255,1);
    border-radius: 5px;
+   max-height: auto;
    
    grid-column: 1 / 3;
    grid-row: 1 / 3;
@@ -24,16 +25,27 @@
    object-fit: cover;
    opacity: 0.75;
    min-width:100%;
-   height: 100%;
+   min-height: 100%;
    border-radius: 5px;
 }
 
 .infoCard {
    background-color: #40C9A2;
-   z-index: 9999;
+   z-index: 10;
    padding:2em;
    border-radius: 5px;
-
+   min-height: auto;
+   
    grid-column: 2 / 4;
    grid-row: 2 / 4;
+}
+
+.truncateOverview {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 7;
+   /* number of lines to show */
+   line-clamp: 7;
+   -webkit-box-orient: vertical;
 }

@@ -9,11 +9,11 @@ const toolSchema = new Schema({
 })
 
 //tools parent schema
-const toolsSchema = new Schema({
+/*const toolsSchema = new Schema({
    toolsList: [toolSchema]
-})
+})*/
 
 //tools model
-const Tools = mongoose.model('Tools', toolsSchema)
+//const Tools = mongoose.model('Tools', toolsSchema)
 const Tool = mongoose.model('Tool', toolSchema)
-module.exports = {Tools, Tool}
+module.exports = {Tool}

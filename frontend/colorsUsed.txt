@@ -1,5 +1,5 @@
-background color - #40C9A2
-nav and secondary color - #212529
+background color - #40C9A2 (acqua)
+nav and secondary color - #212529 (black)
 tertiaty color - #248558
 
 text color - #FFF opacity .55

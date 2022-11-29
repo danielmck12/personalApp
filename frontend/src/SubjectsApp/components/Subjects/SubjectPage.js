@@ -1,25 +1,54 @@
-import styles from './subjects.module.css';
-import { useLocation, useParams } from 'react-router-dom';
+import styles from './SubjectPage.module.css';
+import { /*useLocation,*/ useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import SubjectInfoPanel from './SubjectInfo/SubjectInfoPanel';
+import LoadingScreen from '../../../LoadingScreen/LoadingScreen';
+import { formatForTitle } from '../../helperFunctions/FormatSubjectName';
+import axios from 'axios';
 
-function SubjectPage(props) {
-   
+function SubjectPage() {
 
-   const location = useLocation()
+   //const location = useLocation()
    const { subject } = useParams()
 
+   const [subjectObj, setSubjectObj] = useState([]);
+
+   const [loading, setLoading] = useState(true);
+
+   useEffect(() => {
+
+      setTimeout(() => setLoading(false), 500);
+
+      const getSubjectByName =  async () => {
+         await axios.get(`http://localhost:3001/subjects/${subject}`)
+            .then(({ data }) => {
+               setSubjectObj(data);
+            })
+      }
+      
+      getSubjectByName()
+
+      axios.get(`http://localhost:3001/subjects/${subject}`)
+         .then(({ data }) => {
+            setSubjectObj(data);
+            
+         })
+   }, [subject])
+  
+   if(loading) {
+      return (
+         <div className={styles.subjectPage}>
+            <hr></hr>
+            <LoadingScreen />
+         </div>
+      )
+   }
+
    return (
-      <div>
-         <h1>Welcome to the {subject} page!</h1>
-            <ul>
-               <h2>LOCATION</h2>
-                  <li>LOCATION PATHNAME : {location.pathname}</li>
-                  <li>LOCATION SEARCH : {location.search}</li>
-                  <li>LOCATION HASH : {location.hash}</li>
-                  <li>LOCATION STATE : {location.state}</li>
-                  <li>LOCATION KEY : {location.key}</li>
-               <h2>PARAMS</h2>
-                  <li>PARAMS : {subject} </li>
-            </ul>
+      <div className={styles.subjectPage}>
+         <h1>Welcome to the {formatForTitle(subjectObj.subjectName)} Page!</h1>
+         <hr></hr>
+         <SubjectInfoPanel subject={subjectObj} />
       </div>
    )
 }

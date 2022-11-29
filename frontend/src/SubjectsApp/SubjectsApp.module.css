@@ -15,4 +15,37 @@
 
 .subjectsList {
    padding: 0;
+   
+}
+
+.addSubjectCard {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   padding: 1em;
+   background-color: #212529;
+   color: rgba(255,255,255,0.55);
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   text-align: center;
+}
+
+.addSubjectCard input,
+.addSubjectCard textarea {
+   border-radius: 5px;
+}
+
+.addSubjectCard label {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   text-align: left;
+   margin-bottom: 0.5em;
+   width: 50%;
+
+}
+
+.addSubjectCard button {
+   width:50%;
 }

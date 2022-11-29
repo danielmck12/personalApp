@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 function Navbar() {
    const headerStyle = { borderBottom: "2px solid rgba(255, 255, 255, 0.7)"}
@@ -21,6 +22,7 @@ function Navbar() {
             </div>
          </nav>
          <Outlet />
+         <Footer />
       </div>
    )
 }

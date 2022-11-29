@@ -22,7 +22,7 @@ function ToolsSection() {
          <div className={styles.toolsSection}>
             <div className={styles.toolsSectionHeader}>
                <h2>Tools Section</h2>
-               <Link to="/NewTool">
+               <Link to="/newTool">
                   <p className="link-secondary" >Add a new tool</p> 
                </Link>
             </div>
